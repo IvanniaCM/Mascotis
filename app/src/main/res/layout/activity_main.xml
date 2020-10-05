@@ -17,6 +17,12 @@
         android:layout_centerHorizontal="true"
         tools:layout_editor_absoluteY="7dp"
         tools:layout_editor_absoluteX="8dp" />
+    <ImageButton
+        android:id="@+id/btnIcono"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_stars"
+        />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

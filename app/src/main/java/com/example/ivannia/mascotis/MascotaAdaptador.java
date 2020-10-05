@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,7 +31,6 @@ import static android.widget.Toast.LENGTH_SHORT;
             View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.content_main, parent, false);
             return new ContactoViewHolder(v);
 
-
         }
         //asocia c/elemt de la lista a cada view
         @Override
@@ -52,7 +52,22 @@ import static android.widget.Toast.LENGTH_SHORT;
                     activity.startActivity(intento);
                 }
             });
+
+            contactoViewHolder.btnIcono.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    Toast.makeText(activity, "Diste Me Gusta" + contacto.getNombre(),Toast.LENGTH_SHORT).show();
+                }
+            });
+            
+            contactoViewHolder.btnIcono2.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    Toast.makeText(activity, "Diste Me Gusta" + contacto.getNombre(),Toast.LENGTH_SHORT).show();
+                }
+            });
         }
+
 
         @Override
         public int getItemCount() {// Cantd de elemts que  contiene la list de contactos
@@ -63,12 +78,16 @@ import static android.widget.Toast.LENGTH_SHORT;
             private ImageView imgFoto;
             private TextView tvNombreCV;
             private TextView tvTelefonoCV;
+            private ImageButton btnIcono;
+            private ImageButton btnIcono2;
 
             public ContactoViewHolder(View itemView) {
                 super(itemView);
                 imgFoto=(ImageView) itemView.findViewById(R.id.imgFoto);
                 tvNombreCV=(TextView) itemView.findViewById(R.id.tvNombre);
                 tvTelefonoCV=(TextView) itemView.findViewById(R.id.tvTelefonoCV);
+                btnIcono=(ImageButton) itemView.findViewById(R.id.btnIcono);
+                btnIcono2=(ImageButton) itemView.findViewById(R.id.btnIcono2);
             }
         }
     }
